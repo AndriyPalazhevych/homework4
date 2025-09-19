@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Обчислення</title>
+</head>
+<body>
+  <form method="POST">
+    Число: <input name="a" type="number" required>
+    <button type="submit">Обчислити</button>
+  </form>
+
+  {% if square is not none %}
+    <p>Квадрат: {{ square }}</p>
+    <p>Куб: {{ cube }}</p>
+    <p>Залишок від ділення на 5: {{ mod5 }}</p>
+  {% endif %}
+
+  <button type="button" onclick="changeColor()">Змінити колір</button>
+
+  <script>
+    const colors = ["red", "blue", "green", "yellow", "purple"];
+    let i = 0;
+    function changeColor() {
+      document.body.style.backgroundColor = colors[i];
+      i = (i + 1) % colors.length;
+    }
+  </script>
+</body>
+</html>
